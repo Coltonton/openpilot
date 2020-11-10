@@ -1,6 +1,6 @@
 [![](https://i.imgur.com/UelUjKAh.png)](#)
 
-Table of Contents
+Table of Contents 
 =======================
 
 * [What is openpilot?](#what-is-openpilot)
