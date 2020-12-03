@@ -16,8 +16,8 @@ class CarState(CarStateBase):
   def update(self, cp, cp_cam):
     ret = car.CarState.new_message()
 
-    #ret.gas = cp.vl["Throttle"]['Throttle_Pedal'] / 255.
-    #ret.gasPressed = ret.gas > 1e-5
+    ret.gas = cp.vl["Throttle"]['Throttle_Pedal'] / 255.
+    ret.gasPressed = ret.gas > 1e-5
     if self.car_fingerprint in PREGLOBAL_CARS:
       ret.brakePressed = cp.vl["Brake_Pedal"]['Brake_Pedal'] > 2
     else:
@@ -110,7 +110,7 @@ class CarState(CarStateBase):
 
     checks = [
       # sig_address, frequency
-      #("Throttle", 100),
+      ("Throttle", 100),
       ("Dashlights", 10),
       ("Brake_Pedal", 50),
       ("Wheel_Speeds", 50),

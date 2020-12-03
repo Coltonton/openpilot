@@ -61,7 +61,7 @@ ParamsToggle::ParamsToggle(QString param, QString title, QString description, QS
     }
     QLabel { font-size: 40px }
     * {
-      background-color: #114265;
+      background-color: #191919;
     }
   )");
 
