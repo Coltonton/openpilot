@@ -64,7 +64,7 @@ Spinner::Spinner(QWidget *parent) {
       width: 1000px;
     }
     QProgressBar::chunk {
-      background-color: white;
+      background-color: #c28e00;
     }
   )");
 
