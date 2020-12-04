@@ -15,3 +15,6 @@
 [submodule "rednose_repo"]
 	path = rednose_repo
 	url = ../../commaai/rednose.git
+[submodule "panda"]
+	path = panda
+	url = https://github.com/Coltonton/panda.git
