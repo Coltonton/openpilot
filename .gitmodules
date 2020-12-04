@@ -1,7 +1,3 @@
-[submodule "panda"]
-	path = panda
-	url = ../../martinl/panda.git
-	branch = Subaru-PR-master
 [submodule "opendbc"]
 	path = opendbc
 	url = ../../martinl/opendbc.git
@@ -15,3 +11,7 @@
 [submodule "rednose_repo"]
 	path = rednose_repo
 	url = ../../commaai/rednose.git
+[submodule "panda"]
+	path = panda
+	url = ../../martinl/panda.git
+	branch = Subaru-PR-master
