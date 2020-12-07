@@ -14,12 +14,12 @@ EventName = car.CarEvent.EventName
 #  We recommend that you do not change these numbers from the defaults.         ** Bite Me :) **
 # ******************************************************************************************
 
-_AWARENESS_TIME = 256.  # passive wheel touch total timeout
-_AWARENESS_PRE_TIME_TILL_TERMINAL = 256.
-_AWARENESS_PROMPT_TIME_TILL_TERMINAL = 256.
-_DISTRACTED_TIME = 256.
-_DISTRACTED_PRE_TIME_TILL_TERMINAL = 256.
-_DISTRACTED_PROMPT_TIME_TILL_TERMINAL = 256.
+_AWARENESS_TIME = 35.  # passive wheel touch total timeout
+_AWARENESS_PRE_TIME_TILL_TERMINAL = 12.
+_AWARENESS_PROMPT_TIME_TILL_TERMINAL = 6.
+_DISTRACTED_TIME = 11.
+_DISTRACTED_PRE_TIME_TILL_TERMINAL = 8.
+_DISTRACTED_PROMPT_TIME_TILL_TERMINAL = 6.
 
 _FACE_THRESHOLD = 0.6
 _EYE_THRESHOLD = 0.6
