@@ -27,7 +27,12 @@ if ! command -v pipenv &> /dev/null; then
   pip install pipenv
 fi
 
+echo "update pip"
+pip install --upgrade pip
+pip install pipenv
+
 echo "pip packages install ..."
+[ -d "./xx" ] && export PIPENV_PIPFILE=./xx/Pipfile
 pipenv install --dev --deploy --system
 # update shims for newly installed executables (e.g. scons)
 pyenv rehash

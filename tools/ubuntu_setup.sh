@@ -6,6 +6,7 @@ sudo apt-get update && sudo apt-get install -y \
     build-essential \
     bzip2 \
     capnproto \
+    cppcheck \
     libcapnp-dev \
     clang \
     cmake \
@@ -42,8 +43,10 @@ sudo apt-get update && sudo apt-get install -y \
     opencl-headers \
     python-dev \
     python3-pip \
+    qml-module-qtquick2 \
     qt5-default \
     qtmultimedia5-dev \
+    qtwebengine5-dev \
     screen \
     sudo \
     vim \
@@ -78,12 +81,16 @@ git lfs pull
 git submodule init
 git submodule update
 
-# install python 3.8.2 globally (you should move to python3 anyway)
-pyenv install -s 3.8.2
-pyenv global 3.8.2
+# install python
+pyenv install -s 3.8.5
+pyenv global 3.8.5
 pyenv rehash
+eval "$(pyenv init -)"
 
 # **** in python env ****
+
+# upgrade pip
+pip install --upgrade pip==20.2.4
 
 # install pipenv
 pip install pipenv==2020.8.13

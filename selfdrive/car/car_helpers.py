@@ -6,6 +6,7 @@ from selfdrive.version import comma_remote, tested_branch
 from selfdrive.car.fingerprints import eliminate_incompatible_cars, all_known_cars
 from selfdrive.car.vin import get_vin, VIN_UNKNOWN
 from selfdrive.car.fw_versions import get_fw_versions, match_fw_to_car
+from selfdrive.car.subaru.values import SUBARU_WMI
 from selfdrive.swaglog import cloudlog
 import cereal.messaging as messaging
 from selfdrive.car import gen_empty_fingerprint
@@ -103,9 +104,12 @@ def fingerprint(logcan, sendcan):
     else:
       cloudlog.warning("Getting VIN & FW versions")
       _, vin = get_vin(logcan, sendcan, bus)
-      cloudlog.warning("Waiting 10 seconds")
-      # Subaru needs 10sec delay before FW queries
-      time.sleep(10)
+
+      for wmi in SUBARU_WMI:
+        if vin.startswith(wmi):
+          cloudlog.warning("Subaru 10 second ECU init delay")
+          time.sleep(10)
+          break
       car_fw = get_fw_versions(logcan, sendcan, bus)
 
     fw_candidates = match_fw_to_car(car_fw)
@@ -145,8 +149,7 @@ def fingerprint(logcan, sendcan):
       # Toyota needs higher time to fingerprint, since DSU does not broadcast immediately
       if only_toyota_left(candidate_cars[b]):
         frame_fingerprint = 100  # 1s
-      if len(candidate_cars[b]) == 1:
-        if frame > frame_fingerprint:
+      if len(candidate_cars[b]) == 1 and frame > frame_fingerprint:
           # fingerprint done
           car_fingerprint = candidate_cars[b][0]
 
