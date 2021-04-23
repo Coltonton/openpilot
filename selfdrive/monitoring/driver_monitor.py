@@ -11,13 +11,13 @@ EventName = car.CarEvent.EventName
 # ******************************************************************************************
 #  NOTE: To fork maintainers.
 #  Disabling or nerfing safety features may get you and your users banned from our servers.
-#  We recommend that you do not change these numbers from the defaults.
+#  We recommend that you do not change these numbers from the defaults.                      ** Bite Me :) **
 # ******************************************************************************************
 
-_AWARENESS_TIME = 35.  # passive wheel touch total timeout
+_AWARENESS_TIME = 240.  # passive wheel touch total timeout
 _AWARENESS_PRE_TIME_TILL_TERMINAL = 12.
 _AWARENESS_PROMPT_TIME_TILL_TERMINAL = 6.
-_DISTRACTED_TIME = 11.
+_DISTRACTED_TIME = 30.
 _DISTRACTED_PRE_TIME_TILL_TERMINAL = 8.
 _DISTRACTED_PROMPT_TIME_TILL_TERMINAL = 6.
 
@@ -50,7 +50,7 @@ _POSE_OFFSET_MAX_COUNT = 3600  # stop deweighting new data after 6 min, aka "sho
 _RECOVERY_FACTOR_MAX = 5.  # relative to minus step change
 _RECOVERY_FACTOR_MIN = 1.25  # relative to minus step change
 
-MAX_TERMINAL_ALERTS = 3  # not allowed to engage after 3 terminal alerts
+MAX_TERMINAL_ALERTS = 10  # not allowed to engage after 3 terminal alerts
 MAX_TERMINAL_DURATION = 300  # 30s
 
 # model output refers to center of cropped image, so need to apply the x displacement offset
