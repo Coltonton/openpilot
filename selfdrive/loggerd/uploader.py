@@ -51,7 +51,7 @@ def clear_locks(root):
 
 class Uploader():
   def __init__(self, dongle_id, root):
-    self.dongle_id = None                           ##EDITED
+    self.dongle_id = dongle_id
     self.api = Api(dongle_id)
     self.root = root
 
@@ -192,7 +192,7 @@ class Uploader():
 
 def uploader_fn(exit_event):
   params = Params()
-  dongle_id = None #params.get("DongleId").decode('utf8')               #EDIT
+  dongle_id = params.get("DongleId").decode('utf8')
 
   if dongle_id is None:
     cloudlog.info("uploader missing dongle_id")
